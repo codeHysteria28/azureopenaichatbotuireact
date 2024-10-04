@@ -2,37 +2,95 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aiInterfaceVisible {
+  width: 500px;
+  height: 400px;
+  background-color: #00487c;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chat {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+  width: 480px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 280px;
+}
+
+.chatMessage{
+  background-color: #1c78b9;
   color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+  align-self: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.assistaneChatMessage {
+  background-color: #00487c;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+  align-self: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messageAiIcon {
+  color: white;
+  margin-right: 10px;
+}
+
+.aiInterfaceHidden {
+  display: none;
+}
+
+.userPromtArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInput {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.sendChat {
+  background-color: white;
+  height: 50px;
+  margin-top: 10px;
+  width: 80px;
+  border: none;
+}
+
+.sendChat:hover, .sendChat:focus {
+  background-color: white;
+}
+
+.sendChat:hover .sendIcon {
+  color: #5bb5f5;
+  font-size: 22px;
+  transition: all .3s ease;
+}
+
+.sendIcon {
+  color: #00487c;
+  font-size: 20px;
+  transition: all .3s ease;
 }
