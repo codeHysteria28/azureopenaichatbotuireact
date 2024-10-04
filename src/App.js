@@ -19,9 +19,12 @@ function App() {
 
     axios({
         method: 'post',
-        url: 'http://localhost:7071/api/enhanceText',
+        // Add Azure Function URL between single quotation
+        url: `https://fb-openaipoc.azurewebsites.net/api/enhanceText?code=${process.env.REACT_APP_AZ_FN_KEY}`,
         data: {aiMessage},
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+            'Content-Type': 'application/json'
+         }
     }).then(res => {
         setMessages(prevMessages => [...prevMessages, { sender: 'ai', text: res.data }]);
     });
@@ -40,7 +43,7 @@ function App() {
                   <FaRobot className="messageAiIcon"/>
                   Hello I'm your assistant. How can I help you today ?
               </div>
-              {/* {
+              {
                   messages.map((message, index) => {
                       return (
                           <div key={index} ref={index === messages.length -1 ? lastMessageRef : null} className={message.sender === 'user' ? 'chatMessage' : 'assistaneChatMessage'}>
@@ -49,7 +52,7 @@ function App() {
                           </div>
                       )
                   })
-              } */}
+              }
           </div>
           <div className="userPromtArea">
               <textarea 
